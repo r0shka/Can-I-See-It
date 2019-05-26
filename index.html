@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://cesiumjs.org/releases/1.56.1/Build/Cesium/Cesium.js"></script>
+    <script src="viewerCesiumNavigationMixin.min.js"></script>
+    <link href="https://cesiumjs.org/releases/1.56.1/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!-- Custom CCS -->
+    <link href="custom.css" rel="stylesheet">
+
+</head>
+<body>
+    <div id="cesiumContainer" class="full-height"></div>
+
+    <!-- Toast -->
+    <div id="controlPanel" class="toast" data-delay="4000" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="mr-auto">Can I See It?</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            Il semble que le nom de cette montagne n'est pas dans notre base de donnée.
+        </div>
+    </div>
+
+    <!-- Mountain input -->
+    <div id="controlPanel2">
+        <form class="form-inline">
+            <input type="text" id="long" class="form-control col-sm-2 m-1" placeholder="Longitude">
+            <input type="text" id="lat" class="form-control col-sm-2 m-1" placeholder="Latitude">
+            <input type="text" id="height" class="form-control col-sm-2 m-1" placeholder="Hauteur">
+            <p class = "text-white lead m-1 font-weight-bold">OU</p>
+            <input type="text" id="mountainName" class="form-control col-sm-3 m-1" placeholder="Nom de montagne">
+            <button onclick="nameToCoord()" class="btn btn-primary m-1" type="button">Valider</button>
+        </form>
+    </div>
+
+    <!-- FOV control -->
+    <div id="controlPanel3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button onclick="setFOVtwo()" class="btn btn-outline-light" type="button">FOV 90°</button>
+                <button onclick="setFOVthree()" class="btn btn-outline-light" type="button">FOV 60°</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camera control -->
+    <div id="moveCameraLeft" class="cameraMoveButton" style="top: 50%; left:0;" onclick="moveCameraLeft()"><i class="material-icons md-48 md-light">keyboard_arrow_left</i></div>
+    <div id="moveCameraRight" class="cameraMoveButton" style="top: 50%; right:0;" onclick="moveCameraRight()"><i class="material-icons md-48 md-light">keyboard_arrow_right</i></div>
+    <div class="cameraMoveButton" style="bottom:0; right:5%;">
+        <i class="material-icons md-36 md-light" onclick="zoomCameraOut()">zoom_out</i>
+        <i id="resetCamera" class="material-icons md-36 md-light" onclick="resetCamera()">refresh</i>
+        <i class="material-icons md-36 md-light" onclick="zoomCameraIn()">zoom_in</i>
+    </div>
+
+    <!-- Distance slider -->
+    <div class="cameraMoveButton" style="bottom: 5px; right:30%">
+        <form class="form-inline">
+            <label class="text-white lead" for="distanceRange">Densité d'affichage</label>
+            <input oninput="density()" type="range" class="custom-range" min="0" max="150" step="10" id="distanceRange">
+        </form>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+    <script src="model.js"></script>
+    <script src="utility.js"></script>
+</body>
+</html>

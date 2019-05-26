@@ -1,0 +1,46 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.full-height {
+    height: 100%;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.cameraMoveButton {
+    position: fixed;
+    cursor: pointer;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+#controlPanel {
+    position: absolute;
+    top: 70%;
+    right: 5px;
+}
+
+#controlPanel2 {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+#controlPanel3 {
+    position: absolute;
+    top: 85%;
+    left: 5px;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
