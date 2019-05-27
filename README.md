@@ -1,6 +1,6 @@
 # Can I See It?
 
-<< Can i see it >> est une application web  en Javascript qui  reproduire la vue en 360 degrés qui s’ouvre depuis une montagne,
+Can I See It est une application web  en Javascript qui  reproduire la vue en 360 degrés qui s’ouvre depuis une montagne,
 en affichant les informations sur les environs (montagnes et villes).
 A l’ouverture de l’application, l’utilisateur a deux possibilités d’entrée de la position de caméra à
 partir des coordonnés ou du nom montagne.
