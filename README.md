@@ -1,4 +1,4 @@
-# can-i-see-it
+# Can I See It?
 
 << Can i see it >> est une application web  en Javascript qui  reproduire la vue en 360 degrés qui s’ouvre depuis une montagne,
 en affichant les informations sur les environs (montagnes et villes).
@@ -10,21 +10,26 @@ partir des coordonnés ou du nom montagne.
 
 https://can-i-see-it.web.app/
 
+## Installation
 
-## framework
+• Offline: télécharger tout les fichiers et lancer index.html
 
-• L'application utilise le framework Cesium Ion qui offre 15 gigaoctets de streaming pour le terrain 3D et 1000 sessions de Bing Maps pour imagerie satellite par mois. Pour plus d'informations : https://cesium.com/
+• Online: mettre tout les fichiers dans la racine du site
+
+
+
+## Framework
+
+• L'application utilise le framework Cesium Ion qui offre 15 gigaoctets de streaming pour le terrain 3D et 1000 sessions de Bing Maps pour imagerie satellite par mois, et CesiumJS pour gérer ces données. Pour plus d'informations : https://cesium.com/
 
 • Pour les données cartographiques, on a utilisé la base de données géographiques gratuite GeoNames. La base de données contient plus de 8 millions de noms géographiques qui correspondent à plus de 6,5 millions de lieux existants. Pour plus d'informations :
 https://www.geonames.org/
 
 
 
-
-
 ## TODOs
 
-•Téléchargement de tout les montagnes / villes d’un pays et de ses voisins nous donnes beaucoup de l’information inutile. Par exemple, en positionnant la caméra sur Denali en Alaska,
+• Téléchargement de tout les montagnes / villes d’un pays et de ses voisins nous donnes beaucoup de l’information inutile. Par exemple, en positionnant la caméra sur Denali en Alaska,
 on télécharge les informations sur tous les montagnes / villes du Mexique. Il serait plus raisonnable de télécharger les données par les régions.
 
 • Les points peuvent être vu à travers le terrain 3D. Pour éviter cela, il faut effectuer une étude
@@ -32,3 +37,6 @@ du terrain qui sépare la montagne et le point d’observation, pour déterminer
 peut être vu, et donc s’il faut afficher le point ou pas.
 
 • La taille du plugin de boussole est 40 fois plus grand que le reste de l’application. La suppression des fonctions de plugin non utilisé permettra de réduire sa taille.
+
+• Cacher les cléfs API. Car l'application est coté client uniquement, on ne peut pas cacher les cléfs d'accés de Cesium et GeoNames. Pour résoudre cela il faut utilisé un serveur, au quel on demandera ces cléfs.
+
