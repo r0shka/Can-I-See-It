@@ -191,9 +191,15 @@ function coordToCountry(cameraLat, cameraLong, height){
     fetch(url)
         .then(data=>{return data.json()})
         .then(res=>{
-            viewCamera = new Camera(cameraLong, cameraLat, height, res.countryCode);
-            downloadNeighbours(viewCamera.countryCode);
-            positionCamera();
+            if(res.status.value===14){
+                $(document).ready(function(){
+                    $('.toast').toast('show');
+                });
+            } else {
+                viewCamera = new Camera(cameraLong, cameraLat, height, res.countryCode);
+                downloadNeighbours(viewCamera.countryCode);
+                positionCamera();
+            }
         });
 }
 
