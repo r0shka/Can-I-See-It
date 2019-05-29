@@ -113,7 +113,7 @@ function density() {
         } else {
             switch (maxScore) {
                 case '0': break;
-                case '10': if(item.population > 25000)addCityLabel(item, viewer); break;
+                case '10': if(item.population < 25000)addCityLabel(item, viewer); break;
                 case '20': if(item.population < 50000) addCityLabel(item, viewer); break;
                 case '30': if(item.population < 100000) addCityLabel(item, viewer); break;
                 case '40': if(item.population < 200000) addCityLabel(item, viewer);  break;
