@@ -191,10 +191,15 @@ function coordToCountry(cameraLat, cameraLong, height){
     fetch(url)
         .then(data=>{return data.json()})
         .then(res=>{
-            if(res.status.value===14){
-                $(document).ready(function(){
-                    $('.toast').toast('show');
-                });
+            if(typeof res.status !== 'undefined') {
+                if (res.status.value === 14) {
+                    $(document).ready(function () {
+                        $('.toast').toast('show');
+                    });
+                } else if (res.status.value === 15){
+                    viewCamera = new Camera(cameraLong, cameraLat, height, res.countryCode);
+                    positionCamera();
+                }
             } else {
                 viewCamera = new Camera(cameraLong, cameraLat, height, res.countryCode);
                 downloadNeighbours(viewCamera.countryCode);
@@ -211,6 +216,11 @@ function nameToCoord(){
     var height = document.getElementById("height").value;
     if(name === "") {
         if (cameraLong === "" || cameraLat === "" || height === "") {
+            return;
+        } else if(cameraLong > 180 || cameraLong < -180 || cameraLat > 90 || cameraLat < -90 || height < 0 || isNaN(height) ){
+            $(document).ready(function () {
+                $('.toast').toast('show');
+            });
             return;
         } else {
             coordToCountry(cameraLat, cameraLong, height);
