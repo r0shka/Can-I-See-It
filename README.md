@@ -1,4 +1,5 @@
-# Can I See It?
+**_English version below_**
+# Can I See It? (French)
 
 Can I See It est une application web  en Javascript qui  reproduire la vue en 360 degrés qui s’ouvre depuis une montagne,
 en affichant les informations sur les environs (montagnes et villes).
@@ -16,9 +17,7 @@ https://can-i-see-it.web.app/
 
 • Online: mettre tout les fichiers dans la racine du site
 
-
-
-## Framework
+## Framework & API
 
 • L'application utilise le framework Cesium Ion qui offre 15 gigaoctets de streaming pour le terrain 3D et 1000 sessions de Bing Maps pour imagerie satellite par mois, et CesiumJS pour gérer ces données. Pour plus d'informations : https://cesium.com/
 
@@ -40,3 +39,21 @@ peut être vu, et donc s’il faut afficher le point ou pas.
 
 • Cacher les cléfs API. Car l'application est coté client uniquement, on ne peut pas cacher les cléfs d'accés de Cesium et GeoNames. Pour résoudre cela il faut utilisé un serveur, au quel on demandera ces cléfs.
 
+---
+
+# Can I See It? (English)
+
+Can I See It is a CesiumJS web application that recreates a 360 degrees view from a mountain and shows the information on the surrounding peaks and cities.
+
+## Live version
+
+https://can-i-see-it.web.app/
+
+## Framework & API
+
+• Application is based on Cesium framework which provides a free limited use of 3D geospatial data. More information at : https://cesium.com/
+
+• Geographical data is fetched via API from GeoNames. More information at :
+https://www.geonames.org/
+
+• The compass is not a part of Cesium by default, for that we use a 3rd party plugin (https://github.com/alberto-acevedo/cesium-navigation)
