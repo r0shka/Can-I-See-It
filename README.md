@@ -9,7 +9,7 @@ partir des coordonnés ou du nom montagne.
 
 ## La version en ligne
 
-https://can-i-see-it.web.app/
+https://can-i-see-it-f6f26.web.app/
 
 ## Installation
 
@@ -47,7 +47,7 @@ Can I See It is a CesiumJS web application that recreates a 360 degrees view fro
 
 ## Live version
 
-https://can-i-see-it.web.app/
+https://can-i-see-it-f6f26.web.app/
 
 ## Framework & API
 
