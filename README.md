@@ -1,3 +1,5 @@
+![App image](https://i.imgur.com/6ghivqE.png)
+
 **_English version below_**
 # Can I See It? (French)
 
